@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 using namespace std;
 
 vector <int> quicksort(vector<int> v){
@@ -8,18 +9,20 @@ vector <int> quicksort(vector<int> v){
         return v;
     }else
     {
-        int base = v.front();
+        int basei = rand()%(v.size());
+        int base = v[basei];
         vector <int> lv;
         vector <int> rv;
-        for (int i = 1; i < v.size(); i++)
+        for (int i = 0; i < v.size(); i++)
         {
-            
+            if (i != basei){
             if (v[i]<=base)
             {
                 lv.push_back(v[i]);
             }else
             {
                 rv.push_back(v[i]);
+            }
             } 
         }
         
